@@ -1,9 +1,16 @@
-CREATE DATABASE IF NOT EXISTS test;
+drop database if exists test;
+create database test;
+use test;
 
-CREATE TABLE IF NOT EXISTS test.estudiantes (
-	id INT NOT NULL AUTO_INCREMENT,
-	nombre varchar(100) NOT NULL,
-	comidaPreferida varchar(100) NULL,
-	fechaNacimiento DATE NOT NULL,
-	CONSTRAINT estudiantes_PK PRIMARY KEY (id)
+create table if not exists test.estudiantes (
+id INT NOT NULL auto_increment,
+nombre varchar(100) NOT NULL,
+comidaPreferida varchar(100) NULL,
+fechaNacimiento DATE NOT NULL,
+CONSTRAINT estudiantes_PK PRIMARY KEY(ID)
 );
+INSERT INTO test.estudiantes values
+("1", "Oliver Queen", "Pollo al horno", "2004-05-08"),
+("", "Barry Allen", "Big Belly Burguer", "2002-07-15"),
+("","Felicity Smoke", "Medialunas", "1998-01-25"),
+("", "John Diggle", "Estofado", "2003-04-30");
