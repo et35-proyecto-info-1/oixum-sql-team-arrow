@@ -8,7 +8,7 @@ app.get('/', function(req, res) {
 });
 
 app.get('/query', function(req, res) {
-  connection.query('SELECT * FROM estudiantes', function (error, results, fields) {
+  connection.query('SELECT nombre FROM estudiantes', function (error, results, fields) {
     if (error) throw error;
     res.json(results);
   });
