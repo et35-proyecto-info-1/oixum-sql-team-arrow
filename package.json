@@ -1,0 +1,16 @@
+{
+  "name": "oixum-sql",
+  "version": "1.0.0",
+  "description": "Un cliente de SQL pensado para la educación",
+  "main": "app.js",
+  "scripts": {
+    "start": "node src/app.js",
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "author": "Federico Aloi",
+  "license": "MIT",
+  "dependencies": {
+    "express": "^4.17.1",
+    "mysql": "^2.17.1"
+  }
+}
