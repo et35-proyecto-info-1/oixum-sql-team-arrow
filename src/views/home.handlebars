@@ -17,6 +17,17 @@ textarea{
   min-width: 100%;
 }
 
+.msjError {
+  color: red;
+}
+.cajaError{
+  text-align: center;
+  margin: 5em;
+  background-color: rgba(0, 0, 0, 0.5);
+  border-radius: 1em;
+  padding-bottom: 1em;
+}
+
 button{
   border: none;
   background: rgba(0,255,157,1);
@@ -65,38 +76,24 @@ button:hover{
 <link href="https://fonts.googleapis.com/css?family=Muli&display=swap" rel="stylesheet">
 <link href="https://fonts.googleapis.com/css?family=Heebo&display=swap" rel="stylesheet">
 <center><label class="titulo">Escriba su consulta aqui</label></center>
-<form class="" action="index.html" method="post">
-  <textarea autofocus name="textarea" rows="8" cols="80" placeholder="Select ... From ..."></textarea>
-  <center><button type="button" name="button" onclick=boton()>Consultar</button></center>
+<form class="" action="/" method="post">
+  <textarea autofocus name="query" rows="8" cols="80" placeholder="Select ... From ..."></textarea>
+  <center><button type="submit" name="button" onclick=boton()>Consultar</button></center>
 </form>
 
 
-<!-- Tabla -->
-<table align="center">
-  <tr>
-    <th>idAlumno</th>
+{{#if error}}
+<div class="cajaError">
+<h1 class="msjError">ERROR</h1>
+<code><h2>{{ error }}</h2></code>
+<img src="serverError.png" alt="">
+</div>
+{{/if}}
 
-    <th>Nombre</th>
+{{#if resultados}}
+<h3>Resultados</h3>
+<code>{{ resultados }}</code>
 
-    <th>Edad</th>
-  </tr>
-
-  <tr>
-    <td>1</td>
-    <td>Ray</td>
-    <td>19</td>
-  </tr>
-
-  <tr>
-    <td>4</td>
-    <td>Oliver</td>
-    <td>21</td>
-  </tr>
-
-  <tr>
-    <td>7</td>
-    <td>Barry</td>
-    <td>14</td>
-  </tr>
-
-</table>
+<h3>Columnas</h3>
+<code>{{ columnas }}</code>
+{{/if}}
