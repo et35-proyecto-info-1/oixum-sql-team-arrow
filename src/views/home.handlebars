@@ -28,6 +28,12 @@ textarea{
   padding-bottom: 1em;
 }
 
+.cajaResultados{
+  text-align: center;
+  border-radius: 1em;
+  padding-bottom: 1em;
+}
+
 button{
   border: none;
   background: rgba(0,255,157,1);
@@ -86,14 +92,17 @@ button:hover{
 <div class="cajaError">
 <h1 class="msjError">ERROR</h1>
 <code><h2>{{ error }}</h2></code>
-<img src="serverError.png" alt="">
+<img src="serverError.png">
 </div>
 {{/if}}
 
 {{#if resultados}}
-<h3>Resultados</h3>
+<div class="cajaResultados">
+
+<h2>Resultados</h2>
 <code>{{ resultados }}</code>
 
-<h3>Columnas</h3>
+<h2>Columnas</h2>
 <code>{{ columnas }}</code>
+</div>
 {{/if}}

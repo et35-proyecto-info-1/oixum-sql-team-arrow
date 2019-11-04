@@ -6,7 +6,7 @@ var path = require('path');
 
 var app = express();
 
-app.use(express.static('/public'));
+app.use(express.static('public'));
 app.use(express.urlencoded({ extended: false }));
 app.use(express.urlencoded({ extended: false }));
 app.set('views', path.join(__dirname, 'views'));
