@@ -24,9 +24,11 @@ var tConsulta=text(document.getElementById("consulta").value)
 app.post('/', function(req, res) {
   const query = req.body.query;
   connection.query(query, function (error, results, fields) {
+    console.log(results);
+    console.log(fields);
     res.render('home', {
-      resultados: JSON.stringify(results),
-      columnas: JSON.stringify(fields),
+      resultados: results,
+      columnas: fields,
       error: error
     });
   });

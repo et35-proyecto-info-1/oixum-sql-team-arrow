@@ -103,6 +103,27 @@ button:hover{
 <code>{{ resultados }}</code>
 
 <h2>Columnas</h2>
-<code>{{ columnas }}</code>
+
+
+
+<table>
+  <thead>
+    {{#each columnas}}
+      <td>{{this.name}}</td>
+    {{/each}}
+  </thead>
+  <tbody>
+    {{#each resultados}}
+    <tr>
+        <td>{{this.id}}</td>
+        <td>{{this.nombre}}</td>
+        <td>{{this.comidaPreferida}}</td>
+        <td>{{this.fechaNacimiento}}</td>
+    </tr>
+    {{/each}}
+  </tbody>
+</table>
+
+
 </div>
 {{/if}}
