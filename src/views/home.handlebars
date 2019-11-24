@@ -100,30 +100,36 @@ button:hover{
 <div class="cajaResultados">
 
 <h2>Resultados</h2>
-<code>{{ resultados }}</code>
-
-<h2>Columnas</h2>
-
-
-
+<!--<code>{{ resultados }}</code>-->
+<center>
 <table>
   <thead>
     {{#each columnas}}
+      {{#if this.name}}
       <td>{{this.name}}</td>
+      {{/if}}
     {{/each}}
   </thead>
   <tbody>
     {{#each resultados}}
     <tr>
+        {{#if this.id}}
         <td>{{this.id}}</td>
+        {{/if}}
+        {{#if this.nombre}}
         <td>{{this.nombre}}</td>
+        {{/if}}
+        {{#if this.comidaPreferida}}
         <td>{{this.comidaPreferida}}</td>
+        {{/if}}
+        {{#if this.fechaNacimiento}}
         <td>{{this.fechaNacimiento}}</td>
+        {{/if}}
     </tr>
     {{/each}}
   </tbody>
 </table>
-
+</center>
 
 </div>
 {{/if}}
