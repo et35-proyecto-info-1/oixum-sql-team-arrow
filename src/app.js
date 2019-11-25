@@ -1,6 +1,6 @@
 var express = require('express');
+
 var connection = require('./connection');
-var exphbs = require('express-handlebars');
 
 var path = require('path');
 
@@ -10,11 +10,10 @@ app.use(express.static('public'));
 app.use(express.urlencoded({ extended: false }));
 app.use(express.urlencoded({ extended: false }));
 app.set('views', path.join(__dirname, 'views'));
-app.engine('handlebars', exphbs());
-app.set('view engine', 'handlebars');
+app.set('view engine', 'pug');
 
 app.get('/', function(req, res) {
-  res.render('home');
+  res.render('index');
 });
 
 function boton(){
@@ -26,9 +25,9 @@ app.post('/', function(req, res) {
   connection.query(query, function (error, results, fields) {
     console.log(results);
     console.log(fields);
-    res.render('home', {
-      resultados: results,
-      columnas: fields,
+    res.render('index', {
+      results: results,
+      fields: fields,
       error: error
     });
   });
